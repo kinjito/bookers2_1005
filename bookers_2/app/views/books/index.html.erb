@@ -1,8 +1,8 @@
-<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <body>
-   <main>
-     <p id="notice"><%= notice %></p>
-        <div class="container px-5 px-sm-0">
+<body>
+ <main>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+   <p id="notice"><%= notice %></p>
+   <div class="container px-5 px-sm-0">
          <div id="error_explanation">
           <% if @book.errors.any? %>
            <%= @book.errors.count %>error prohibited this obj from being saved:</h3>
@@ -15,7 +15,7 @@
           <div class="col-md-3">
            <%= render "users/list", user:current_user,book:@book %>
           </div>
-          <div class="col-md-8 offset-md-1">
+           <div class="col-md-8 offset-md-1">
            <h2>Books</h2>
            <table class="table table-hover table-inverse">
              <thead>
@@ -39,5 +39,5 @@
           </div>
          </div>
         </div>
-   </main>
-  </body>
+ </main>
+</body>

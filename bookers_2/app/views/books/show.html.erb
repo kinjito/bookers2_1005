@@ -1,25 +1,27 @@
-<main>
- <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
- <div class="container px-5 px-sm-0">
-  <div class="row">
-   <div class="col-md-3">
+<body>
+ <main>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <div class="container px-5 px-sm-0">
+   <div class="row">
+    <div class="col-md-3">
    <%= render "users/list",user:@user,book:@book %>
    </div>
-    <div class="col-md-8 offset-md-1">
-     <h2>Book detail</h2>
-    <tbody>
-     <table class="table">
-       <td><%= attachment_image_tag @book.user,:profile_image,format: 'jpeg',fallback: "no_image.jpg",size: "100x100" %></br>
-       <%= link_to @user.name,user_path(current_user) %></td>
-       <td><%= link_to @book.title,book_path(@book) %></td>
-       <td><%= @book.body %></td>
-       <% if @user.id == current_user.id %>
-       <td><%= link_to "Edit",edit_book_path, class: "btn btn-sm btn-success" %></td>
-       <td><%= link_to "Destroy", book_path(@book), class: "btn btn-sm btn-danger", method: :delete, data: {confirm: "本当に消しますか？"} %></td>
-       <% end %>
-     </table>
-  </tbody>
+     <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <tbody>
+       <table class="table">
+        <td><%= attachment_image_tag @book.user,:profile_image,format: 'jpeg',fallback: "no_image.jpg",size: "100x100" %></br>
+        <%= link_to @user.name,user_path(current_user) %></td>
+        <td><%= link_to @book.title,book_path(@book) %></td>
+        <td><%= @book.body %></td>
+        <% if @user.id == current_user.id %>
+        <td><%= link_to "Edit",edit_book_path, class: "btn btn-sm btn-success" %></td>
+        <td><%= link_to "Destroy", book_path(@book), class: "btn btn-sm btn-danger", method: :delete, data: {confirm: "本当に消しますか？"} %></td>
+        <% end %>
+       </table>
+      </tbody>
+     </div>
+   </div>
   </div>
-  </div>
- </div>
-</main>
+ </main>
+</body>

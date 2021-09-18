@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user, only: [:edit]
+  # before_action :correct_user, only: [:edit]
     def index
       @users = User.all
       # @user = User.new #追記すべきか
@@ -18,6 +18,9 @@ class UsersController < ApplicationController
     def edit
       @users = User.new
       @user = User.find(params[:id])
+      # if @user != currect_user
+      #   redirect_to user_path(current_user)
+      # end
       # @books = Book.new
     end
 
@@ -52,8 +55,8 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name,:profile_image,:introduction)
     end
      
-    def correct_user
-     @user = User.find(params[:id])
-     redirect_to(@user) unless @user == current_user
-    end
+    # def correct_user
+    # @user = User.find(params[:id])
+    # redirect_to(@user) unless @user == current_user
+    # end
 end
