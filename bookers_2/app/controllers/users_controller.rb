@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :correct_user, only: [:edit]
     def index
       @users = User.all
       # @user = User.new #追記すべきか
@@ -31,11 +33,11 @@ class UsersController < ApplicationController
 
     def update
       @user = User.find(params[:id])
-      @user.update(user_params)
-      redirect_to user_path(@user)
-      # else
-      # render :edit
-      # end
+      if@user.update(user_params)
+       redirect_to user_path(@user),notice:'You have updated user successfully.'
+      else
+      render :edit
+      end
     end
 
     def destroy
@@ -48,5 +50,10 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name,:profile_image,:introduction)
+    end
+     
+    def correct_user
+     @user = User.find(params[:id])
+     redirect_to(@user) unless @user == current_user
     end
 end
