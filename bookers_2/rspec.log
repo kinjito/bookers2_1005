@@ -22,7 +22,7 @@ Userモデルのテスト
 [32m      一意性があること[0m
     introductionカラム
 [32m      50文字以下であること: 50文字は〇[0m
-[31m      50文字以下であること: 51文字は× (FAILED - 1)[0m
+[32m      50文字以下であること: 51文字は×[0m
   アソシエーションのテスト
     Bookモデルとの関係
 [32m      1:Nとなっている[0m
@@ -95,7 +95,7 @@ Userモデルのテスト
   投稿一覧画面のテスト
     表示内容の確認
 [32m      URLが正しい[0m
-[31m      自分と他人の画像のリンク先が正しい (FAILED - 2)[0m
+[32m      自分と他人の画像のリンク先が正しい[0m
 [32m      自分の投稿と他人の投稿のタイトルのリンク先がそれぞれ正しい[0m
 [32m      自分の投稿と他人の投稿のオピニオンが表示される[0m
     サイドバーの確認
@@ -126,10 +126,10 @@ Userモデルのテスト
 [32m      titleフォームが表示される[0m
 [32m      titleフォームに値が入っていない[0m
 [32m      opinionフォームが表示される[0m
-[31m      opinionフォームに値が入っていない (FAILED - 3)[0m
+[32m      opinionフォームに値が入っていない[0m
 [32m      Create Bookボタンが表示される[0m
     投稿成功のテスト
-[31m      自分の新しい投稿が正しく保存される (FAILED - 4)[0m
+[32m      自分の新しい投稿が正しく保存される[0m
     編集リンクのテスト
 [32m      編集画面に遷移する[0m
     削除リンクのテスト
@@ -153,7 +153,7 @@ Userモデルのテスト
 [32m      URLが正しい[0m
 [32m      自分と他人の画像が表示される: fallbackの画像がサイドバーの1つ＋一覧(2人)の2つの計3つ存在する[0m
 [32m      自分と他人の名前がそれぞれ表示される[0m
-[31m      自分と他人のshowリンクがそれぞれ表示される (FAILED - 5)[0m
+[32m      自分と他人のshowリンクがそれぞれ表示される[0m
     サイドバーの確認
 [32m      自分の名前と紹介文が表示される[0m
 [32m      自分のユーザ編集画面へのリンクが存在する[0m
@@ -229,32 +229,32 @@ Userモデルのテスト
       表示内容の確認
 [32m        URLが正しい[0m
 [32m        「Book detail」と表示される[0m
-[31m        ユーザ画像・名前のリンク先が正しい (FAILED - 6)[0m
+[32m        ユーザ画像・名前のリンク先が正しい[0m
 [32m        投稿のtitleが表示される[0m
 [32m        投稿のopinionが表示される[0m
 [32m        投稿の編集リンクが表示されない[0m
 [32m        投稿の削除リンクが表示されない[0m
       サイドバーの確認
 [32m        他人の名前と紹介文が表示される[0m
-[31m        他人のユーザ編集画面へのリンクが存在する (FAILED - 7)[0m
+[31m        他人のユーザ編集画面へのリンクが存在する (FAILED - 1)[0m
 [32m        自分の名前と紹介文は表示されない[0m
-[31m        自分のユーザ編集画面へのリンクは存在しない (FAILED - 8)[0m
+[32m        自分のユーザ編集画面へのリンクは存在しない[0m
     他人の投稿編集画面
-[31m      遷移できず、投稿一覧画面にリダイレクトされる (FAILED - 9)[0m
+[31m      遷移できず、投稿一覧画面にリダイレクトされる (FAILED - 2)[0m
     他人のユーザ詳細画面のテスト
       表示の確認
 [32m        URLが正しい[0m
-[31m        投稿一覧のユーザ画像のリンク先が正しい (FAILED - 10)[0m
+[32m        投稿一覧のユーザ画像のリンク先が正しい[0m
 [32m        投稿一覧に他人の投稿のtitleが表示され、リンクが正しい[0m
 [32m        投稿一覧に他人の投稿のopinionが表示される[0m
 [32m        自分の投稿は表示されない[0m
       サイドバーの確認
 [32m        他人の名前と紹介文が表示される[0m
-[31m        他人のユーザ編集画面へのリンクが存在する (FAILED - 11)[0m
+[31m        他人のユーザ編集画面へのリンクが存在する (FAILED - 3)[0m
 [32m        自分の名前と紹介文は表示されない[0m
-[31m        自分のユーザ編集画面へのリンクは存在しない (FAILED - 12)[0m
+[32m        自分のユーザ編集画面へのリンクは存在しない[0m
     他人のユーザ情報編集画面
-[31m      遷移できず、自分のユーザ詳細画面にリダイレクトされる (FAILED - 13)[0m
+[32m      遷移できず、自分のユーザ詳細画面にリダイレクトされる[0m
   グリッドシステムのテスト: container, row, col-md-〇を正しく使えている
 [32m    ユーザ一覧画面[0m
 [32m    ユーザ詳細画面[0m
@@ -283,57 +283,12 @@ Userモデルのテスト
 
 Failures:
 
-  1) Userモデルのテスト バリデーションのテスト introductionカラム 50文字以下であること: 51文字は×
-     [31mFailure/Error: [0mis_expected.to eq [1;36mfalse[0m[0m
-     [31m[0m
-     [31m  expected: false[0m
-     [31m       got: true[0m
-     [31m[0m
-     [31m  (compared using ==)[0m
-     [31m[0m
-     [31m  Diff:[0m[0m
-     [31m  [0m[34m@@ -1 +1 @@[0m
-     [31m  [0m[31m-false[0m
-     [31m  [0m[32m+true[0m
-     [31m  [0m[0m
-     [36m# ./spec/models/user_spec.rb:44:in `block (4 levels) in <main>'[0m
-
-  2) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 自分と他人の画像のリンク先が正しい
-     [31mFailure/Error: [0m[32mexpect[0m(page).to have_link [31m[1;31m'[0m[31m[1;31m'[0m[31m[0m, [35mhref[0m: user_path(other_book.user)[0m
-     [31m  expected to find link "" with href "/users/1" but there were no matches[0m
-     [36m# ./spec/system/02_after_login_spec.rb:52:in `block (4 levels) in <main>'[0m
-
-  3) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 opinionフォームに値が入っていない
-     [31mFailure/Error: [0m[32mexpect[0m(find_field([31m[1;31m'[0m[31mbook[body][1;31m'[0m[31m[0m).text).to be_blank[0m
-     [31m  expected `"iuxla8w9i4933cbgzz0m".blank?` to be truthy, got false[0m
-     [36m# ./spec/system/02_after_login_spec.rb:158:in `block (4 levels) in <main>'[0m
-
-  4) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される
-     [31mFailure/Error: [0m[32mexpect[0m { click_button [31m[1;31m'[0m[31mCreate Book[1;31m'[0m[31m[0m }.to change(user.books, [33m:count[0m).by([1;34m1[0m)[0m
-     [31m  expected `Book::ActiveRecord_Associations_CollectionProxy#count` to have changed by 1, but was changed by 0[0m
-     [36m# ./spec/system/02_after_login_spec.rb:172:in `block (4 levels) in <main>'[0m
-
-  5) [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人のshowリンクがそれぞれ表示される
-     [31mFailure/Error: [0m[32mexpect[0m(page).to have_link [31m[1;31m'[0m[31mShow[1;31m'[0m[31m[0m, [35mhref[0m: user_path(other_user)[0m
-     [31m  expected to find link "Show" with href "/users/1" but there were no matches[0m
-     [36m# ./spec/system/02_after_login_spec.rb:266:in `block (4 levels) in <main>'[0m
-
-  6) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい
-     [31mFailure/Error: [0m[32mexpect[0m(page).to have_link other_book.user.name, [35mhref[0m: user_path(other_book.user)[0m
-     [31m  expected to find link "s9mqjj83hv" with href "/users/1" but there were no matches[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:226:in `block (5 levels) in <main>'[0m
-
-  7) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
+  1) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
      [31mFailure/Error: [0m[32mexpect[0m(page).to have_link [31m[1;31m'[0m[31m[1;31m'[0m[31m[0m, [35mhref[0m: edit_user_path(other_user)[0m
      [31m  expected to find link "" with href "/users/1/edit" but there were no matches[0m
      [36m# ./spec/system/03_finishing_touches_spec.rb:248:in `block (5 levels) in <main>'[0m
 
-  8) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクは存在しない
-     [31mFailure/Error: [0m[32mexpect[0m(page).not_to have_link [31m[1;31m'[0m[31m[1;31m'[0m[31m[0m, [35mhref[0m: edit_user_path(user)[0m
-     [31m  expected not to find visible link "" with href "/users/2/edit", found 1 match: ""[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:255:in `block (5 levels) in <main>'[0m
-
-  9) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる
+  2) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる
      [31mFailure/Error: [0m[32mexpect[0m(current_path).to eq [31m[1;31m'[0m[31m/books[1;31m'[0m[31m[0m[0m
      [31m[0m
      [31m  expected: "/books"[0m
@@ -342,46 +297,17 @@ Failures:
      [31m  (compared using ==)[0m
      [36m# ./spec/system/03_finishing_touches_spec.rb:263:in `block (4 levels) in <main>'[0m
 
-  10) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい
-      [31mFailure/Error: [0m[32mexpect[0m(page).to have_link [31m[1;31m'[0m[31m[1;31m'[0m[31m[0m, [35mhref[0m: user_path(other_user)[0m
-      [31m  expected to find link "" with href "/users/1" but there were no matches[0m
-      [36m# ./spec/system/03_finishing_touches_spec.rb:277:in `block (5 levels) in <main>'[0m
+  3) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
+     [31mFailure/Error: [0m[32mexpect[0m(page).to have_link [31m[1;31m'[0m[31m[1;31m'[0m[31m[0m, [35mhref[0m: edit_user_path(other_user)[0m
+     [31m  expected to find link "" with href "/users/1/edit" but there were no matches[0m
+     [36m# ./spec/system/03_finishing_touches_spec.rb:297:in `block (5 levels) in <main>'[0m
 
-  11) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する
-      [31mFailure/Error: [0m[32mexpect[0m(page).to have_link [31m[1;31m'[0m[31m[1;31m'[0m[31m[0m, [35mhref[0m: edit_user_path(other_user)[0m
-      [31m  expected to find link "" with href "/users/1/edit" but there were no matches[0m
-      [36m# ./spec/system/03_finishing_touches_spec.rb:297:in `block (5 levels) in <main>'[0m
-
-  12) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクは存在しない
-      [31mFailure/Error: [0m[32mexpect[0m(page).not_to have_link [31m[1;31m'[0m[31m[1;31m'[0m[31m[0m, [35mhref[0m: edit_user_path(user)[0m
-      [31m  expected not to find visible link "" with href "/users/2/edit", found 1 match: ""[0m
-      [36m# ./spec/system/03_finishing_touches_spec.rb:304:in `block (5 levels) in <main>'[0m
-
-  13) [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ情報編集画面 遷移できず、自分のユーザ詳細画面にリダイレクトされる
-      [31mFailure/Error: [0m[32mexpect[0m(current_path).to eq [31m[1;31m'[0m[31m/users/[1;31m'[0m[31m[0m + user.id.to_s[0m
-      [31m[0m
-      [31m  expected: "/users/2"[0m
-      [31m       got: "/users/1/edit"[0m
-      [31m[0m
-      [31m  (compared using ==)[0m
-      [36m# ./spec/system/03_finishing_touches_spec.rb:312:in `block (4 levels) in <main>'[0m
-
-Finished in 17.58 seconds (files took 1.73 seconds to load)
-[31m197 examples, 13 failures[0m
+Finished in 17.25 seconds (files took 1.75 seconds to load)
+[31m197 examples, 3 failures[0m
 
 Failed examples:
 
-[31mrspec ./spec/models/user_spec.rb:42[0m [36m# Userモデルのテスト バリデーションのテスト introductionカラム 50文字以下であること: 51文字は×[0m
-[31mrspec ./spec/system/02_after_login_spec.rb:50[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 自分と他人の画像のリンク先が正しい[0m
-[31mrspec ./spec/system/02_after_login_spec.rb:157[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト サイドバーの確認 opinionフォームに値が入っていない[0m
-[31mrspec ./spec/system/02_after_login_spec.rb:171[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 投稿成功のテスト 自分の新しい投稿が正しく保存される[0m
-[31mrspec ./spec/system/02_after_login_spec.rb:264[0m [36m# [STEP2] ユーザログイン後のテスト ユーザ一覧画面のテスト 表示内容の確認 自分と他人のshowリンクがそれぞれ表示される[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:225[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい[0m
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:247[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:254[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクは存在しない[0m
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:261[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:276[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト 表示の確認 投稿一覧のユーザ画像のリンク先が正しい[0m
 [31mrspec ./spec/system/03_finishing_touches_spec.rb:296[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 他人のユーザ編集画面へのリンクが存在する[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:303[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ詳細画面のテスト サイドバーの確認 自分のユーザ編集画面へのリンクは存在しない[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:310[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人のユーザ情報編集画面 遷移できず、自分のユーザ詳細画面にリダイレクトされる[0m
 

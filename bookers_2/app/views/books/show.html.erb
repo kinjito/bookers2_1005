@@ -4,14 +4,16 @@
   <div class="container px-5 px-sm-0">
    <div class="row">
     <div class="col-md-3">
-   <%= render "users/list",user:@user,book:@book %>
-   </div>
+     <%= render "users/list",user:@user,book:@book %>
+    </div>
      <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <tbody>
        <table class="table">
-        <td><%= attachment_image_tag @book.user,:profile_image,format: 'jpeg',fallback: "no_image.jpg",size: "100x100" %></br>
-        <%= link_to @user.name,user_path(current_user) %></td>
+        <td><%=link_to user_path(@user.id) do %>
+          　 <%= attachment_image_tag @book.user,:profile_image,format: 'jpeg',fallback: "no_image.jpg",size: "100x100" %>
+            <% end %></br>
+            <%= link_to @user.name,user_path(@user) %></td>
         <td><%= link_to @book.title,book_path(@book) %></td>
         <td><%= @book.body %></td>
         <% if @user.id == current_user.id %>
