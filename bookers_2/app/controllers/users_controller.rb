@@ -1,15 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  # before_action :correct_user, only: [:edit]
     def index
       @users = User.all
-      # @user = User.new #追記すべきか
       @book = Book.new
-      # @books = @user.books
     end
 
     def show
-      # @users = User.all
       @user= User.find(params[:id])
       @book = Book.new
       @books = @user.books
@@ -21,7 +17,6 @@ class UsersController < ApplicationController
       if @user != current_user
         redirect_to user_path(current_user)
       end
-      # @books = Book.new
     end
 
     def create
@@ -29,9 +24,6 @@ class UsersController < ApplicationController
       @user.user_id = current_user.id
       @user.save
       redirect_to book_path(current_user.id)
-      # else
-      # render :show
-      # end
     end
 
     def update
@@ -54,9 +46,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name,:profile_image,:introduction)
     end
-     
-    # def correct_user
-    # @user = User.find(params[:id])
-    # redirect_to(@user) unless @user == current_user
-    # end
 end
