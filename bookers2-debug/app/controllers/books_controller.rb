@@ -1,16 +1,17 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
-  
+
   def show
     @book = Book.find(params[:id])
     @user = @book.user
+    @newbook = Book.new
     # @user = User.new
     # @users = User.page(params[:page]).reverse_order
   end
 
   def index
     @books = Book.all
-    @book = Book.new 
+    @book = Book.new
     @user = User.new
   end
 
